@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace eShopSolution.Data.Entities
 {
-    class Order
+    public class Order
     {
         public int Id { set; get; }
 
@@ -24,5 +24,7 @@ namespace eShopSolution.Data.Entities
         public string ShipPhoneNumber { set; get; }
 
         public OrderStatus Status { set; get; }
+
+        public List<OrderDetail> OrderDetails { get; set; }
     }
 }

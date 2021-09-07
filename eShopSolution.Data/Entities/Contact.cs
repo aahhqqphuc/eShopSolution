@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace eShopSolution.Data.Entities
 {
-    class Contact
+    public class Contact
     {
         public int Id { set; get; }
 

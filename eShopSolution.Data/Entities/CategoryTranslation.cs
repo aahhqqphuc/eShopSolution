@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace eShopSolution.Data.Entities
 {
-    class CategoryTranslation
+    public class CategoryTranslation
     {
         public int Id { set; get; }
 
@@ -21,5 +21,9 @@ namespace eShopSolution.Data.Entities
         public string LanguageId { set; get; }
 
         public string SeoAlias { set; get; }
+
+        public Category Category { get; set; }
+
+        public Language Language { get; set; }
     }
 }

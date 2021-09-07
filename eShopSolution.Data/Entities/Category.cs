@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace eShopSolution.Data.Entities
 {
-    class Category
+    public class Category
     {
         public int Id { set; get; }
 
@@ -18,5 +18,9 @@ namespace eShopSolution.Data.Entities
         public int? ParentId { set; get; }
 
         public Status Status { set; get; }
+
+        public List<ProductInCategory> ProductInCategories { get; set; }
+
+        public List<CategoryTranslation> CategoryTranslations { get; set; }
     }
 }

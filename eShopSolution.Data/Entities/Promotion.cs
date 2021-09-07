@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace eShopSolution.Data.Entities
 {
-    class Promotion
+    public class Promotion
     {
         public int Id { set; get; }
 
