@@ -9,5 +9,6 @@
 - Microsoft.Extensions.Configuration.FileExtensions
 - Microsoft.Extensions.Configuration.Json
 - Microsoft.AspNetCore.Identity.EntityFrameworkCore
+- Microsoft.AspNetCore.Http
 ## How to configure and run
 ## How to contribute
