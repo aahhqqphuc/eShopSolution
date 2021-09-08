@@ -4,23 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace eShopSolution.Application.Catalog.Products.Dtos
+namespace eShopSolution.Application.Catalog.Products.Dtos.Manage
 {
-    public class ProductViewModel
+    public class ProductCreateRequest
     {
-        public int Id { set; get; }
+        public string Name { get; set; }
 
-        public decimal Price { set; get; }
+        public decimal Price { get; set; }
 
         public decimal OriginalPrice { set; get; }
 
         public int Stock { set; get; }
-
-        public int ViewCount { set; get; }
-
-        public DateTime DateCreated { set; get; }
-
-        public string Name { set; get; }
 
         public string Description { set; get; }
 
