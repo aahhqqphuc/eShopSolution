@@ -8,5 +8,6 @@
 - Microsoft.EntityFrameworkCore.Design
 - Microsoft.Extensions.Configuration.FileExtensions
 - Microsoft.Extensions.Configuration.Json
+- Microsoft.AspNetCore.Identity.EntityFrameworkCore
 ## How to configure and run
 ## How to contribute
