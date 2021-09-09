@@ -1,16 +1,12 @@
 ﻿using Microsoft.AspNetCore.Http;
 
-namespace eShopSolution.ViewModels.Catalog.Products.Manage
+namespace eShopSolution.ViewModels.Catalog.Products
 {
-    public class ProductCreateRequest
+    public class ProductUpdateRequest
     {
-        public string Name { get; set; }
+        public int Id { get; set; }
 
-        public decimal Price { get; set; }
-
-        public decimal OriginalPrice { set; get; }
-
-        public int Stock { set; get; }
+        public string Name { set; get; }
 
         public string Description { set; get; }
 
