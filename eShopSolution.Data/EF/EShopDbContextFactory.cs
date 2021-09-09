@@ -1,18 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
-using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace eShopSolution.Data.EF
 {
-    public class EShopDbContextFactory : IDesignTimeDbContextFactory<EShopDBContext>
+    public class EShopDbContextFactory : IDesignTimeDbContextFactory<EShopDbContext>
     {
-        public EShopDBContext CreateDbContext(string[] args)
+        public EShopDbContext CreateDbContext(string[] args)
         {
             IConfigurationRoot configuration = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
@@ -21,10 +16,11 @@ namespace eShopSolution.Data.EF
 
             var connectionString = configuration.GetConnectionString("eShopSolutionDb");
 
-            var optionBuilder = new DbContextOptionsBuilder<EShopDBContext>();
+            var optionBuilder = new DbContextOptionsBuilder<EShopDbContext>();
+
             optionBuilder.UseSqlServer(connectionString);
 
-            return new EShopDBContext(optionBuilder.Options);
+            return new EShopDbContext(optionBuilder.Options);
         }
     }
 }

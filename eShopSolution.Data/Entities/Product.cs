@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace eShopSolution.Data.Entities
 {
@@ -27,5 +24,7 @@ namespace eShopSolution.Data.Entities
         public List<Cart> Carts { get; set; }
 
         public List<ProductTranslation> ProductTranslations { get; set; }
+
+        public List<ProductImage> ProductImages { get; set; }
     }
 }

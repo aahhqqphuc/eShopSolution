@@ -9,5 +9,7 @@
 - Microsoft.Extensions.Configuration.FileExtensions
 - Microsoft.Extensions.Configuration.Json
 - Microsoft.AspNetCore.Identity.EntityFrameworkCore
+- Microsoft.AspNetCore.Http
+- Swashbuckle.AspNetCore
 ## How to configure and run
 ## How to contribute

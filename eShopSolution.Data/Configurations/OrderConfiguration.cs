@@ -2,10 +2,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace eShopSolution.Data.Configurations
 {
@@ -19,7 +15,7 @@ namespace eShopSolution.Data.Configurations
 
             builder.Property(x => x.Id).UseIdentityColumn();
 
-            builder.Property(x => x.OrderDate).HasDefaultValue(DateTime.Now);
+            builder.Property(x => x.OrderDate);
 
             builder.Property(x => x.ShipEmail).IsRequired().IsUnicode(false).HasMaxLength(50);
 
