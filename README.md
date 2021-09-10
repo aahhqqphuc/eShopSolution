@@ -11,5 +11,6 @@
 - Microsoft.AspNetCore.Identity.EntityFrameworkCore
 - Microsoft.AspNetCore.Http
 - Swashbuckle.AspNetCore
+- Microsoft.AspNetCore.Authentication.JwtBearer
 ## How to configure and run
 ## How to contribute
