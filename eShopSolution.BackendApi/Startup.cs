@@ -5,7 +5,6 @@ using eShopSolution.Data.EF;
 using eShopSolution.Data.Entities;
 using eShopSolution.ViewModels.System.Users;
 using EShopSolution.Utilities.Constants;
-using FluentValidation;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;

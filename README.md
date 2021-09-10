@@ -15,3 +15,4 @@
 - FluentValidation.AspNetCore
 ## How to configure and run
 ## How to contribute
+## Admin template: https://startbootstrap.com/templates/sb-admin/
