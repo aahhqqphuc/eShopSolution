@@ -12,5 +12,6 @@
 - Microsoft.AspNetCore.Http
 - Swashbuckle.AspNetCore
 - Microsoft.AspNetCore.Authentication.JwtBearer
+- FluentValidation.AspNetCore
 ## How to configure and run
 ## How to contribute
