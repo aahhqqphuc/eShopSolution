@@ -13,6 +13,10 @@
 - Swashbuckle.AspNetCore
 - Microsoft.AspNetCore.Authentication.JwtBearer
 - FluentValidation.AspNetCore
+- Newtonsoft.Json;
+- Microsoft.IdentityModel.Logging
+- Microsoft.IdentityModel.Tokens;
+- System.IdentityModel.Tokens.Jwt;
 ## How to configure and run
 ## How to contribute
 ## Admin template: https://startbootstrap.com/templates/sb-admin/
