@@ -19,13 +19,11 @@ namespace eShopSolution.Application.Catalog.Products
     public class ProductService : IProductService
     {
         private readonly EShopDbContext _context;
-
         private readonly IStorageService _storageService;
 
         public ProductService(EShopDbContext context, IStorageService storageService)
         {
             _context = context;
-
             _storageService = storageService;
         }
 
@@ -88,15 +86,10 @@ namespace eShopSolution.Application.Catalog.Products
                 throw new EShopException($"Cannot find a product with id: {request.Id}");
 
             productTranslations.Name = request.Name;
-
             productTranslations.SeoAlias = request.SeoAlias;
-
             productTranslations.SeoDescription = request.SeoDescription;
-
             productTranslations.SeoTitle = request.SeoTitle;
-
             productTranslations.Description = request.Description;
-
             productTranslations.Details = request.Details;
 
             //Save image
@@ -108,7 +101,6 @@ namespace eShopSolution.Application.Catalog.Products
                 if (thumbnailImage != null)
                 {
                     thumbnailImage.FileSize = request.ThumbnailImage.Length;
-
                     thumbnailImage.ImagePath = await this.SaveFile(request.ThumbnailImage);
 
                     _context.ProductImages.Update(thumbnailImage);
@@ -128,9 +120,7 @@ namespace eShopSolution.Application.Catalog.Products
             var images = _context.ProductImages.Where(i => i.ProductId == productId);
 
             foreach (var image in images)
-            {
                 await _storageService.DeleteFileAsync(image.ImagePath);
-            }
 
             _context.Products.Remove(product);
 
@@ -259,7 +249,6 @@ namespace eShopSolution.Application.Catalog.Products
             if (request.ImageFile != null)
             {
                 productImage.ImagePath = await this.SaveFile(request.ImageFile);
-
                 productImage.FileSize = request.ImageFile.Length;
             }
 
@@ -292,7 +281,6 @@ namespace eShopSolution.Application.Catalog.Products
             if (request.ImageFile != null)
             {
                 productImage.ImagePath = await this.SaveFile(request.ImageFile);
-
                 productImage.FileSize = request.ImageFile.Length;
             }
 
