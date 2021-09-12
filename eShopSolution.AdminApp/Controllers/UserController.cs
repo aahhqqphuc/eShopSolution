@@ -19,7 +19,7 @@ namespace eShopSolution.AdminApp.Controllers
             _userApiClient = userApiClient;
         }
 
-        public async Task<IActionResult> Index(string keyword, int pageIndex = 1, int pageSize = 10)
+        public async Task<IActionResult> Index(string keyword, int pageIndex = 1, int pageSize = 7)
         {
             var request = new GetUserPagingRequest()
             {
@@ -104,6 +104,14 @@ namespace eShopSolution.AdminApp.Controllers
             HttpContext.Session.Remove("Token");
 
             return RedirectToAction("Index", "Login");
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Details(Guid id)
+        {
+            var result = await _userApiClient.GetById(id);
+
+            return View(result.ResultObj);
         }
     }
 }
