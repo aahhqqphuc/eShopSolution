@@ -13,9 +13,8 @@
     </ol>
     <div class="card mb-4">
         <div class="card-header">
-            <a class="btn btn-success" asp-action="Index" asp-controller="User">Về danh sách</a>
+            <a class="btn btn-success" asp-controller="User" asp-action="Index">Về danh sách</a>
         </div>
-
         <div class="card-body">
             <div class="col-md-12">
                 <dl class="row">
@@ -26,7 +25,6 @@
                         @Html.DisplayFor(model => model.Id)
                     </dd>
                 </dl>
-
                 <form asp-action="Delete">
                     <input asp-for="Id" type="hidden" />
                     <input type="submit" value="Xóa" class="btn btn-danger" />

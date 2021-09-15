@@ -1,4 +1,4 @@
-# ASP.NET 5.0 project
+# eShopSolution project with .NET 5
 ## Technologies
 - ASP.NET 5.0
 - Entity Framework Core 5
