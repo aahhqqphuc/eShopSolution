@@ -2,21 +2,21 @@
 {
     public class ProductTranslation
     {
-        public int Id { set; get; }
+        public int Id { get; set; }
 
-        public int ProductId { set; get; }
+        public int ProductId { get; set; }
 
-        public string Name { set; get; }
+        public string Name { get; set; }
 
-        public string Description { set; get; }
+        public string Description { get; set; }
 
-        public string Details { set; get; }
+        public string Details { get; set; }
 
-        public string SeoDescription { set; get; }
+        public string SeoDescription { get; set; }
 
-        public string SeoTitle { set; get; }
+        public string SeoTitle { get; set; }
 
-        public string LanguageId { set; get; }
+        public string LanguageId { get; set; }
 
         public string SeoAlias { get; set; }
 

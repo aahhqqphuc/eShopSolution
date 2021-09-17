@@ -2,13 +2,13 @@
 {
     public class OrderDetail
     {
-        public int OrderId { set; get; }
+        public int OrderId { get; set; }
 
-        public int ProductId { set; get; }
+        public int ProductId { get; set; }
 
-        public int Quantity { set; get; }
+        public int Quantity { get; set; }
 
-        public decimal Price { set; get; }
+        public decimal Price { get; set; }
 
         public Order Order { get; set; }
 

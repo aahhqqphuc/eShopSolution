@@ -5,23 +5,23 @@ namespace eShopSolution.Data.Entities
 {
     public class Transaction
     {
-        public int Id { set; get; }
+        public int Id { get; set; }
 
-        public DateTime TransactionDate { set; get; }
+        public DateTime TransactionDate { get; set; }
 
-        public string ExternalTransactionId { set; get; }
+        public string ExternalTransactionId { get; set; }
 
-        public decimal Amount { set; get; }
+        public decimal Amount { get; set; }
 
-        public decimal Fee { set; get; }
+        public decimal Fee { get; set; }
 
-        public string Result { set; get; }
+        public string Result { get; set; }
 
-        public string Message { set; get; }
+        public string Message { get; set; }
 
-        public TransactionStatus Status { set; get; }
+        public TransactionStatus Status { get; set; }
 
-        public string Provider { set; get; }
+        public string Provider { get; set; }
 
         public Guid UserId { get; set; }
 

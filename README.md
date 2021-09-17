@@ -1,22 +1,11 @@
-# eShopSolution project with .NET 5
+﻿# ASP.NET Core 5.0 project (eShopSolution)
 ## Technologies
-- ASP.NET 5.0
+- ASP.NET Core 5.0
 - Entity Framework Core 5
-## Install Packages
-- Microsoft.EntityFrameworkCore.SqlServer
-- Microsoft.EntityFrameworkCore.Tools
-- Microsoft.EntityFrameworkCore.Design
-- Microsoft.Extensions.Configuration.FileExtensions
-- Microsoft.Extensions.Configuration.Json
-- Microsoft.AspNetCore.Identity.EntityFrameworkCore
-- Microsoft.AspNetCore.Http
-- Swashbuckle.AspNetCore
-- Microsoft.AspNetCore.Authentication.JwtBearer
-- FluentValidation.AspNetCore
-- Newtonsoft.Json;
-- Microsoft.IdentityModel.Logging
-- Microsoft.IdentityModel.Tokens;
-- System.IdentityModel.Tokens.Jwt;
+## Environment
+- SDK 5.0.4
 ## How to configure and run
 ## How to contribute
 ## Admin template: https://startbootstrap.com/templates/sb-admin/
+## References
+- TEDU: https://tedu.com.vn/khoa-hoc/lam-du-an-voi-aspnet-core-31-34.html

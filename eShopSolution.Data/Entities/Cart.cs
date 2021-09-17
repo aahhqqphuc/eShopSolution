@@ -4,13 +4,13 @@ namespace eShopSolution.Data.Entities
 {
     public class Cart
     {
-        public int Id { set; get; }
+        public int Id { get; set; }
 
-        public int ProductId { set; get; }
+        public int ProductId { get; set; }
 
-        public int Quantity { set; get; }
+        public int Quantity { get; set; }
 
-        public decimal Price { set; get; }
+        public decimal Price { get; set; }
 
         public Guid UserId { get; set; }
 

@@ -177,6 +177,7 @@ namespace eShopSolution.AdminApp.Controllers
             if (result.IsSuccessed)
             {
                 TempData["result"] = "Cập nhật quyền thành công";
+
                 return RedirectToAction("Index");
             }
 

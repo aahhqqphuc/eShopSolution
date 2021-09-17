@@ -23,7 +23,7 @@ namespace eShopSolution.AdminApp.Services
 
         public async Task<ApiResult<bool>> RegisterUser(RegisterRequest request)
         {
-            return await PostAsync<ApiResult<bool>>($"/api/users", JsonConvert.SerializeObject(request));
+            return await PostAsync<ApiResult<bool>>("/api/users", JsonConvert.SerializeObject(request));
         }
 
         public async Task<ApiResult<bool>> UpdateUser(Guid id, UserUpdateRequest request)

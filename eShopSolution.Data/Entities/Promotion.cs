@@ -5,24 +5,24 @@ namespace eShopSolution.Data.Entities
 {
     public class Promotion
     {
-        public int Id { set; get; }
+        public int Id { get; set; }
 
-        public DateTime FromDate { set; get; }
+        public DateTime FromDate { get; set; }
 
-        public DateTime ToDate { set; get; }
+        public DateTime ToDate { get; set; }
 
-        public bool ApplyForAll { set; get; }
+        public bool ApplyForAll { get; set; }
 
-        public int? DiscountPercent { set; get; }
+        public int? DiscountPercent { get; set; }
 
-        public decimal? DiscountAmount { set; get; }
+        public decimal? DiscountAmount { get; set; }
 
-        public string ProductIds { set; get; }
+        public string ProductIds { get; set; }
 
-        public string ProductCategoryIds { set; get; }
+        public string ProductCategoryIds { get; set; }
 
-        public Status Status { set; get; }
+        public Status Status { get; set; }
 
-        public string Name { set; get; }
+        public string Name { get; set; }
     }
 }

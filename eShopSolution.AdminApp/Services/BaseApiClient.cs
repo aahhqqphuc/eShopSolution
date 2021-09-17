@@ -70,7 +70,7 @@ namespace eShopSolution.AdminApp.Services
         {
             var client = _httpClientFactory.CreateClient();
 
-            client.BaseAddress = new Uri(_configuration["BaseAddress"]);
+            client.BaseAddress = new Uri(_configuration[SystemConstants.AppSettings.BaseAddress]);
 
             var httpContent = new StringContent(json, Encoding.UTF8, "application/json");
 
@@ -90,7 +90,7 @@ namespace eShopSolution.AdminApp.Services
 
             var client = _httpClientFactory.CreateClient();
 
-            client.BaseAddress = new Uri(_configuration["BaseAddress"]);
+            client.BaseAddress = new Uri(_configuration[SystemConstants.AppSettings.BaseAddress]);
 
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", sessions);
 

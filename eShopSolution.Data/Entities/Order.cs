@@ -6,21 +6,21 @@ namespace eShopSolution.Data.Entities
 {
     public class Order
     {
-        public int Id { set; get; }
+        public int Id { get; set; }
 
-        public DateTime OrderDate { set; get; }
+        public DateTime OrderDate { get; set; }
 
-        public Guid UserId { set; get; }
+        public Guid UserId { get; set; }
 
-        public string ShipName { set; get; }
+        public string ShipName { get; set; }
 
-        public string ShipAddress { set; get; }
+        public string ShipAddress { get; set; }
 
-        public string ShipEmail { set; get; }
+        public string ShipEmail { get; set; }
 
-        public string ShipPhoneNumber { set; get; }
+        public string ShipPhoneNumber { get; set; }
 
-        public OrderStatus Status { set; get; }
+        public OrderStatus Status { get; set; }
 
         public List<OrderDetail> OrderDetails { get; set; }
 

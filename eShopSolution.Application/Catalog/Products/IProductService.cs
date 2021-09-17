@@ -1,7 +1,6 @@
 ﻿using eShopSolution.ViewModels.Catalog.ProductImages;
 using eShopSolution.ViewModels.Catalog.Products;
 using eShopSolution.ViewModels.Common;
-using Microsoft.AspNetCore.Http;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -31,9 +30,9 @@ namespace eShopSolution.Application.Catalog.Products
 
         Task<int> UpdateImage(int imageId, ProductImageUpdateRequest request);
 
-        Task<ProductImageViewModel> GetImageById(int imageId);
+        Task<ProductImageVm> GetImageById(int imageId);
 
-        Task<List<ProductImageViewModel>> GetListImages(int productId);
+        Task<List<ProductImageVm>> GetListImages(int productId);
 
         Task<PagedResult<ProductVm>> GetAllByCategoryId(string languageId, GetPublicProductPagingRequest request);
     }
