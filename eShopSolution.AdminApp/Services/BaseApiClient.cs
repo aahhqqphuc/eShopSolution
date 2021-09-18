@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
@@ -102,6 +103,26 @@ namespace eShopSolution.AdminApp.Services
                 return JsonConvert.DeserializeObject<TResponse>(body);
 
             return JsonConvert.DeserializeObject<TResponse>(body);
+        }
+
+        public async Task<List<T>> GetListAsync<T>(string url)
+        {
+            var sessions = _httpContextAccessor.HttpContext.Session.GetString(SystemConstants.AppSettings.Token);
+
+            var client = _httpClientFactory.CreateClient();
+
+            client.BaseAddress = new Uri(_configuration[SystemConstants.AppSettings.BaseAddress]);
+
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", sessions);
+
+            var response = await client.GetAsync(url);
+
+            var body = await response.Content.ReadAsStringAsync();
+
+            if (response.IsSuccessStatusCode)
+                return (List<T>)JsonConvert.DeserializeObject(body, typeof(List<T>));
+
+            throw new Exception(body);
         }
     }
 }

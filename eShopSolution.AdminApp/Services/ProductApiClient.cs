@@ -3,6 +3,7 @@ using eShopSolution.ViewModels.Common;
 using EShopSolution.Utilities.Constants;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
+using Newtonsoft.Json;
 using System;
 using System.IO;
 using System.Net.Http;
@@ -30,7 +31,8 @@ namespace eShopSolution.AdminApp.Services
         public async Task<PagedResult<ProductVm>> GetPagings(GetManageProductPagingRequest request)
         {
             var data = await GetAsync<PagedResult<ProductVm>>($"/api/products/paging?pageIndex={request.PageIndex}" +
-                $"&pageSize={request.PageSize}&keyword={request.Keyword}&languageId={request.LanguageId}");
+                $"&pageSize={request.PageSize}&keyword={request.Keyword}&languageId={request.LanguageId}" +
+                $"&categoryId={request.CategoryId}");
 
             return data;
         }
@@ -86,6 +88,16 @@ namespace eShopSolution.AdminApp.Services
             var response = await client.PostAsync($"/api/products/", requestContent);
 
             return response.IsSuccessStatusCode;
+        }
+
+        public async Task<ApiResult<bool>> CategoryAssign(int id, CategoryAssignRequest request)
+        {
+            return await PutAsync<ApiResult<bool>>($"/api/products/{id}/categories", JsonConvert.SerializeObject(request));
+        }
+
+        public async Task<ProductVm> GetById(int id, string languageId)
+        {
+            return await GetAsync<ProductVm>($"/api/products/{id}/{languageId}");
         }
     }
 }
