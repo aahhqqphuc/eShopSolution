@@ -16,8 +16,8 @@ namespace eShopSolution.Data.Extensions
                 new AppConfig() { Key = "HomeDescription", Value = "This is description page of eShopSolution" });
 
             modelBuilder.Entity<Language>().HasData(
-                new Language() { Id = "vi-VN", Name = "Tiếng Việt", IsDefault = true },
-                new Language() { Id = "en-US", Name = "English", IsDefault = false });
+                new Language() { Id = "vi", Name = "Tiếng Việt", IsDefault = true },
+                new Language() { Id = "en", Name = "English", IsDefault = false });
 
             modelBuilder.Entity<Category>().HasData(
                new Category()
@@ -43,7 +43,7 @@ namespace eShopSolution.Data.Extensions
                     Id = 1,
                     CategoryId = 1,
                     Name = "Áo nam",
-                    LanguageId = "vi-VN",
+                    LanguageId = "vi",
                     SeoAlias = "ao-nam",
                     SeoDescription = "Sản phẩm áo thời trang nam",
                     SeoTitle = "Sản phẩm áo thời trang nam"
@@ -53,7 +53,7 @@ namespace eShopSolution.Data.Extensions
                     Id = 2,
                     CategoryId = 1,
                     Name = "Men shirt",
-                    LanguageId = "en-US",
+                    LanguageId = "en",
                     SeoAlias = "men-shirt",
                     SeoDescription = "Men's fashion shirt products",
                     SeoTitle = "Men's fashion shirt products"
@@ -65,7 +65,7 @@ namespace eShopSolution.Data.Extensions
                     Id = 3,
                     CategoryId = 2,
                     Name = "Áo nữ",
-                    LanguageId = "vi-VN",
+                    LanguageId = "vi",
                     SeoAlias = "ao-nu",
                     SeoDescription = "Sản phẩm áo thời trang nữ",
                     SeoTitle = "Sản phẩm áo thời trang nữ"
@@ -75,7 +75,7 @@ namespace eShopSolution.Data.Extensions
                     Id = 4,
                     CategoryId = 2,
                     Name = "Women shirt",
-                    LanguageId = "en-US",
+                    LanguageId = "en",
                     SeoAlias = "women-shirt",
                     SeoDescription = "Women's fashion shirt products",
                     SeoTitle = "Womens's fashion shirt products"
@@ -98,7 +98,7 @@ namespace eShopSolution.Data.Extensions
                    Id = 1,
                    ProductId = 1,
                    Name = "Áo sơ mi trắng nam",
-                   LanguageId = "vi-VN",
+                   LanguageId = "vi",
                    SeoAlias = "ao-so-mi-trang-nam",
                    SeoDescription = "Áo sơ mi trắng nam",
                    SeoTitle = "Áo sơ mi trắng nam",
@@ -110,7 +110,7 @@ namespace eShopSolution.Data.Extensions
                    Id = 2,
                    ProductId = 1,
                    Name = "Mens white shirt",
-                   LanguageId = "en-US",
+                   LanguageId = "en",
                    SeoAlias = "mens-white-shirt",
                    SeoDescription = "Mens white shirt",
                    SeoTitle = "Mens white shirt",
@@ -144,7 +144,7 @@ namespace eShopSolution.Data.Extensions
                 Email = "ffqphuc@gmail.com",
                 NormalizedEmail = "ffqphuc@gmail.com",
                 EmailConfirmed = true,
-                PasswordHash = hasher.HashPassword(null, "Zxc.123456"),
+                PasswordHash = hasher.HashPassword(null, "Zx@123456"),
                 SecurityStamp = string.Empty,
                 FirstName = "Phuc",
                 LastName = "Nguyen",
@@ -156,6 +156,15 @@ namespace eShopSolution.Data.Extensions
                 RoleId = roleId,
                 UserId = adminId
             });
+
+            modelBuilder.Entity<Slide>().HasData(
+             new Slide() { Id = 1, Name = "Second Thumbnail label", Description = "Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.", SortOrder = 1, Url = "#", Image = "/themes/images/carousel/1.png", Status = Status.Active },
+             new Slide() { Id = 2, Name = "Second Thumbnail label", Description = "Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.", SortOrder = 2, Url = "#", Image = "/themes/images/carousel/2.png", Status = Status.Active },
+             new Slide() { Id = 3, Name = "Second Thumbnail label", Description = "Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.", SortOrder = 3, Url = "#", Image = "/themes/images/carousel/3.png", Status = Status.Active },
+             new Slide() { Id = 4, Name = "Second Thumbnail label", Description = "Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.", SortOrder = 4, Url = "#", Image = "/themes/images/carousel/4.png", Status = Status.Active },
+             new Slide() { Id = 5, Name = "Second Thumbnail label", Description = "Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.", SortOrder = 5, Url = "#", Image = "/themes/images/carousel/5.png", Status = Status.Active },
+             new Slide() { Id = 6, Name = "Second Thumbnail label", Description = "Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.", SortOrder = 6, Url = "#", Image = "/themes/images/carousel/6.png", Status = Status.Active }
+             );
         }
     }
 }

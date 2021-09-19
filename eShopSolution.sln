@@ -26,7 +26,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Domain", "2. Domain", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Hosts", "3. Hosts", "{B5E88CB8-8B29-4F10-BB7F-1A39CDB52975}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eShopSolution.AdminApp", "eShopSolution.AdminApp\eShopSolution.AdminApp.csproj", "{40483910-0747-4D00-8A00-E50FB31BBE3C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eShopSolution.AdminApp", "eShopSolution.AdminApp\eShopSolution.AdminApp.csproj", "{40483910-0747-4D00-8A00-E50FB31BBE3C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eShopSolution.ApiIntegration", "eShopSolution.ApiIntegration\eShopSolution.ApiIntegration.csproj", "{5510BCF5-3951-44C5-A43A-63FBDAF08524}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -62,6 +64,10 @@ Global
 		{40483910-0747-4D00-8A00-E50FB31BBE3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{40483910-0747-4D00-8A00-E50FB31BBE3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{40483910-0747-4D00-8A00-E50FB31BBE3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5510BCF5-3951-44C5-A43A-63FBDAF08524}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5510BCF5-3951-44C5-A43A-63FBDAF08524}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5510BCF5-3951-44C5-A43A-63FBDAF08524}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5510BCF5-3951-44C5-A43A-63FBDAF08524}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -74,6 +80,7 @@ Global
 		{B169C0CE-AA6E-423E-81C2-B7E04AA7026C} = {B5846875-F758-4F03-A541-E4A232F9DCC5}
 		{2AC400D5-AC7C-403E-917C-D6E55B5899EB} = {B5E88CB8-8B29-4F10-BB7F-1A39CDB52975}
 		{40483910-0747-4D00-8A00-E50FB31BBE3C} = {B5E88CB8-8B29-4F10-BB7F-1A39CDB52975}
+		{5510BCF5-3951-44C5-A43A-63FBDAF08524} = {F85597C4-0927-4A38-8FA5-F71D9C1A9A13}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DCAE83DC-0DAD-4841-A419-35EE330AC7C7}

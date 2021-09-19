@@ -37,5 +37,8 @@ namespace eShopSolution.ViewModels.Catalog.Products
 
         [Display(Name = "Ảnh sản phẩm")]
         public IFormFile ThumbnailImage { get; set; }
+
+        [Display(Name = "Nổi bật")]
+        public bool? IsFeatured { get; set; }
     }
 }
