@@ -63,10 +63,7 @@ namespace eShopSolution.AdminApp.Controllers
 
             HttpContext.Session.SetString(SystemConstants.AppSettings.Token, result.ResultObj);
 
-            await HttpContext.SignInAsync(
-                        CookieAuthenticationDefaults.AuthenticationScheme,
-                        userPrincipal,
-                        authProperties);
+            await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, userPrincipal, authProperties);
 
             return RedirectToAction("Index", "Home");
         }
