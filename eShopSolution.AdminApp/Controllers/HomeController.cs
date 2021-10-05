@@ -35,7 +35,7 @@ namespace eShopSolution.AdminApp.Controllers
         }
 
         [HttpPost]
-        public IActionResult Language(NavigationViewModel viewModel)
+        public IActionResult Language(NavigationVm viewModel)
         {
             HttpContext.Session.SetString(SystemConstants.AppSettings.DefaultLanguageId, viewModel.CurrentLanguageId);
 

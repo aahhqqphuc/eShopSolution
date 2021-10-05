@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace eShopSolution.AdminApp.Models
 {
-    public class NavigationViewModel
+    public class NavigationVm
     {
         public List<SelectListItem> Languages { get; set; }
 

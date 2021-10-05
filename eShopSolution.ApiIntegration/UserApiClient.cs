@@ -42,9 +42,10 @@ namespace eShopSolution.ApiIntegration
                 $"{request.PageIndex}&pageSize={request.PageSize}&keyword={request.Keyword}");
         }
 
-        public async Task<ApiResult<bool>> Delete(Guid id)
+        public async Task<bool> Delete(Guid id)
         {
-            return await DeleteAsync<ApiResult<bool>>($"/api/users/{id}");
+            //return await DeleteAsync<ApiResult<bool>>($"/api/users/{id}");
+            return await DeleteAsync($"/api/users/{id}");
         }
 
         public async Task<ApiResult<bool>> RoleAssign(Guid id, RoleAssignRequest request)

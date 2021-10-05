@@ -146,14 +146,14 @@ namespace eShopSolution.AdminApp.Controllers
 
             var result = await _userApiClient.Delete(request.Id);
 
-            if (result.IsSuccessed)
+            if (result)
             {
                 TempData["result"] = "Xóa người dùng thành công";
 
                 return RedirectToAction("Index");
             }
 
-            ModelState.AddModelError("", result.Message);
+            ModelState.AddModelError("", "Xóa người dùng không thành công");
 
             return View(request);
         }

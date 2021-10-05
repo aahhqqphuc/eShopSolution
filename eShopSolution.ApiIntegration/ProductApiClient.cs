@@ -65,7 +65,7 @@ namespace eShopSolution.ApiIntegration
                 requestContent.Add(bytes, "thumbnailImage", request.ThumbnailImage.FileName);
             }
 
-            requestContent.Add(new StringContent(request.Name), "name");
+            requestContent.Add(new StringContent(string.IsNullOrEmpty(request.Name) ? "" : request.Name.ToString()), "name");
 
             requestContent.Add(new StringContent(request.Price.ToString()), "price");
 
@@ -73,15 +73,15 @@ namespace eShopSolution.ApiIntegration
 
             requestContent.Add(new StringContent(request.Stock.ToString()), "stock");
 
-            requestContent.Add(new StringContent(request.Description), "description");
+            requestContent.Add(new StringContent(string.IsNullOrEmpty(request.Description) ? "" : request.Description.ToString()), "description");
 
-            requestContent.Add(new StringContent(request.Details), "details");
+            requestContent.Add(new StringContent(string.IsNullOrEmpty(request.Details) ? "" : request.Details.ToString()), "details");
 
-            requestContent.Add(new StringContent(request.SeoDescription), "seoDescription");
+            requestContent.Add(new StringContent(string.IsNullOrEmpty(request.SeoDescription) ? "" : request.SeoDescription.ToString()), "seoDescription");
 
-            requestContent.Add(new StringContent(request.SeoTitle), "seoTitle");
+            requestContent.Add(new StringContent(string.IsNullOrEmpty(request.SeoTitle) ? "" : request.SeoTitle.ToString()), "seoTitle");
 
-            requestContent.Add(new StringContent(request.SeoAlias), "seoAlias");
+            requestContent.Add(new StringContent(string.IsNullOrEmpty(request.SeoAlias) ? "" : request.SeoAlias.ToString()), "seoAlias");
 
             requestContent.Add(new StringContent(languageId), "languageId");
 
@@ -118,17 +118,17 @@ namespace eShopSolution.ApiIntegration
                 requestContent.Add(bytes, "thumbnailImage", request.ThumbnailImage.FileName);
             }
 
-            requestContent.Add(new StringContent(request.Name.ToString()), "name");
+            requestContent.Add(new StringContent(string.IsNullOrEmpty(request.Name) ? "" : request.Name.ToString()), "name");
 
-            requestContent.Add(new StringContent(request.Description.ToString()), "description");
+            requestContent.Add(new StringContent(string.IsNullOrEmpty(request.Description) ? "" : request.Description.ToString()), "description");
 
-            requestContent.Add(new StringContent(request.Details.ToString()), "details");
+            requestContent.Add(new StringContent(string.IsNullOrEmpty(request.Details) ? "" : request.Details.ToString()), "details");
 
-            requestContent.Add(new StringContent(request.SeoDescription.ToString()), "seoDescription");
+            requestContent.Add(new StringContent(string.IsNullOrEmpty(request.SeoDescription) ? "" : request.SeoDescription.ToString()), "seoDescription");
 
-            requestContent.Add(new StringContent(request.SeoTitle.ToString()), "seoTitle");
+            requestContent.Add(new StringContent(string.IsNullOrEmpty(request.SeoTitle) ? "" : request.SeoTitle.ToString()), "seoTitle");
 
-            requestContent.Add(new StringContent(request.SeoAlias.ToString()), "seoAlias");
+            requestContent.Add(new StringContent(string.IsNullOrEmpty(request.SeoAlias) ? "" : request.SeoAlias.ToString()), "seoAlias");
 
             requestContent.Add(new StringContent(languageId), "languageId");
 
@@ -149,16 +149,18 @@ namespace eShopSolution.ApiIntegration
 
         public async Task<List<ProductVm>> GetFeaturedProducts(string languageId, int take)
         {
-            var data = await GetListAsync<ProductVm>($"/api/products/featured/{languageId}/{take}");
-
-            return data;
+            return await GetListAsync<ProductVm>($"/api/products/featured/{languageId}/{take}");
         }
 
         public async Task<List<ProductVm>> GetLatestProducts(string languageId, int take)
         {
-            var data = await GetListAsync<ProductVm>($"/api/products/latest/{languageId}/{take}");
+            return await GetListAsync<ProductVm>($"/api/products/latest/{languageId}/{take}");
+        }
 
-            return data;
+        public async Task<bool> DeleteProduct(int id)
+        {
+            return await DeleteAsync($"/api/products/{id}");
+            //return await DeleteAsync<ApiResult<bool>>($"/api/products/{id}");
         }
     }
 }

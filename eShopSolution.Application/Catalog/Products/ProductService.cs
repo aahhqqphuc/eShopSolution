@@ -21,6 +21,7 @@ namespace eShopSolution.Application.Catalog.Products
     {
         private readonly EShopDbContext _context;
         private readonly IStorageService _storageService;
+        private const string USER_CONTENT_FOLDER_NAME = "user-content";
 
         public ProductService(EShopDbContext context, IStorageService storageService)
         {
@@ -190,8 +191,10 @@ namespace eShopSolution.Application.Catalog.Products
                         from pic in ppic.DefaultIfEmpty()
                         join c in _context.Categories on pic.CategoryId equals c.Id into picc
                         from c in picc.DefaultIfEmpty()
+                        join pi in _context.ProductImages on p.Id equals pi.ProductId into ppi
+                        from pi in ppi.DefaultIfEmpty()
                         where pt.LanguageId == request.LanguageId
-                        select new { p, pt, pic, c };
+                        select new { p, pt, pic, c, pi };
 
             //2. Filter
             if (!string.IsNullOrEmpty(request.Keyword))
@@ -219,7 +222,8 @@ namespace eShopSolution.Application.Catalog.Products
                      SeoDescription = x.pt.SeoDescription,
                      SeoTitle = x.pt.SeoTitle,
                      Stock = x.p.Stock,
-                     ViewCount = x.p.ViewCount
+                     ViewCount = x.p.ViewCount,
+                     ThumbnailImage = x.pi.ImagePath
                  }).ToListAsync();
 
             //4. Select and projection
@@ -247,6 +251,8 @@ namespace eShopSolution.Application.Catalog.Products
                                     where pic.ProductId == productId && ct.LanguageId == languageId
                                     select ct.Name).ToListAsync();
 
+            var image = await _context.ProductImages.Where(x => x.ProductId == productId && x.IsDefault == true).FirstOrDefaultAsync();
+
             var productViewModel = new ProductVm()
             {
                 Id = product.Id,
@@ -262,7 +268,8 @@ namespace eShopSolution.Application.Catalog.Products
                 SeoTitle = productTranslation != null ? productTranslation.SeoTitle : null,
                 Stock = product.Stock,
                 ViewCount = product.ViewCount,
-                Categories = categories
+                Categories = categories,
+                ThumbnailImage = image != null ? image.ImagePath : "no-image.jpg"
             };
 
             return productViewModel;
@@ -368,7 +375,7 @@ namespace eShopSolution.Application.Catalog.Products
 
             await _storageService.SaveFileAsync(file.OpenReadStream(), fileName);
 
-            return fileName;
+            return "/" + USER_CONTENT_FOLDER_NAME + "/" + fileName;
         }
 
         public async Task<PagedResult<ProductVm>> GetAllByCategoryId(string languageId, GetPublicProductPagingRequest request)

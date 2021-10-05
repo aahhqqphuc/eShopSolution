@@ -17,7 +17,7 @@ namespace eShopSolution.ApiIntegration
 
         Task<ApiResult<PagedResult<UserVm>>> GetUsersPagings(GetUserPagingRequest request);
 
-        Task<ApiResult<bool>> Delete(Guid id);
+        Task<bool> Delete(Guid id);
 
         Task<ApiResult<bool>> RoleAssign(Guid id, RoleAssignRequest request);
     }

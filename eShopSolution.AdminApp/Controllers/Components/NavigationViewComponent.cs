@@ -31,7 +31,7 @@ namespace eShopSolution.AdminApp.Controllers.Components
                 Selected = currentLanguageId == null ? x.IsDefault : currentLanguageId == x.Id.ToString()
             });
 
-            var navigationVm = new NavigationViewModel()
+            var navigationVm = new NavigationVm()
             {
                 CurrentLanguageId = currentLanguageId,
                 Languages = items.ToList()
