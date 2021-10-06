@@ -122,11 +122,11 @@ namespace eShopSolution.AdminApp.Controllers
 
             var categories = await _categoryApiClient.GetAll(languageId);
 
-            var categoryAssignRequest = new CategoryAssignRequest();
+            var request = new CategoryAssignRequest();
 
             foreach (var category in categories)
             {
-                categoryAssignRequest.Categories.Add(new SelectItem()
+                request.Categories.Add(new SelectItem()
                 {
                     Id = category.Id.ToString(),
                     Name = category.Name,
@@ -134,7 +134,7 @@ namespace eShopSolution.AdminApp.Controllers
                 });
             }
 
-            return categoryAssignRequest;
+            return request;
         }
 
         [HttpGet]
@@ -151,7 +151,6 @@ namespace eShopSolution.AdminApp.Controllers
                 Details = product.Details,
                 Name = product.Name,
                 SeoAlias = product.SeoAlias,
-                SeoDescription = product.SeoDescription,
                 SeoTitle = product.SeoTitle
             };
 
@@ -205,6 +204,16 @@ namespace eShopSolution.AdminApp.Controllers
             ModelState.AddModelError("", "Xóa sản phẩm không thành công");
 
             return View(request);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Details(int id)
+        {
+            var languageId = HttpContext.Session.GetString(SystemConstants.AppSettings.DefaultLanguageId);
+
+            var result = await _productApiClient.GetById(id, languageId);
+
+            return View(result);
         }
     }
 }

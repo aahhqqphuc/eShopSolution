@@ -44,7 +44,6 @@ namespace eShopSolution.Application.Catalog.Products
                         Name = request.Name,
                         Description = request.Description,
                         Details = request.Details,
-                        SeoDescription = request.SeoDescription,
                         SeoAlias = request.SeoAlias,
                         SeoTitle = request.SeoTitle,
                         LanguageId = request.LanguageId
@@ -108,7 +107,6 @@ namespace eShopSolution.Application.Catalog.Products
 
             productTranslations.Name = request.Name;
             productTranslations.SeoAlias = request.SeoAlias;
-            productTranslations.SeoDescription = request.SeoDescription;
             productTranslations.SeoTitle = request.SeoTitle;
             productTranslations.Description = request.Description;
             productTranslations.Details = request.Details;
@@ -219,7 +217,6 @@ namespace eShopSolution.Application.Catalog.Products
                      OriginalPrice = x.p.OriginalPrice,
                      Price = x.p.Price,
                      SeoAlias = x.pt.SeoAlias,
-                     SeoDescription = x.pt.SeoDescription,
                      SeoTitle = x.pt.SeoTitle,
                      Stock = x.p.Stock,
                      ViewCount = x.p.ViewCount,
@@ -264,7 +261,6 @@ namespace eShopSolution.Application.Catalog.Products
                 OriginalPrice = product.OriginalPrice,
                 Price = product.Price,
                 SeoAlias = productTranslation != null ? productTranslation.SeoAlias : null,
-                SeoDescription = productTranslation != null ? productTranslation.SeoDescription : null,
                 SeoTitle = productTranslation != null ? productTranslation.SeoTitle : null,
                 Stock = product.Stock,
                 ViewCount = product.ViewCount,
@@ -408,7 +404,6 @@ namespace eShopSolution.Application.Catalog.Products
                      OriginalPrice = x.p.OriginalPrice,
                      Price = x.p.Price,
                      SeoAlias = x.pt.SeoAlias,
-                     SeoDescription = x.pt.SeoDescription,
                      SeoTitle = x.pt.SeoTitle,
                      Stock = x.p.Stock,
                      ViewCount = x.p.ViewCount
@@ -483,7 +478,6 @@ namespace eShopSolution.Application.Catalog.Products
                     OriginalPrice = x.p.OriginalPrice,
                     Price = x.p.Price,
                     SeoAlias = x.pt.SeoAlias,
-                    SeoDescription = x.pt.SeoDescription,
                     SeoTitle = x.pt.SeoTitle,
                     Stock = x.p.Stock,
                     ViewCount = x.p.ViewCount,
@@ -519,7 +513,6 @@ namespace eShopSolution.Application.Catalog.Products
                     OriginalPrice = x.p.OriginalPrice,
                     Price = x.p.Price,
                     SeoAlias = x.pt.SeoAlias,
-                    SeoDescription = x.pt.SeoDescription,
                     SeoTitle = x.pt.SeoTitle,
                     Stock = x.p.Stock,
                     ViewCount = x.p.ViewCount,

@@ -10,6 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
     <link href="/css/styles.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
+    <link href="/css/site.css" rel="stylesheet" />
 </head>
 <body class="sb-nav-fixed">
     @await Component.InvokeAsync("Navigation")
@@ -24,12 +25,12 @@
                             Trang chủ
                         </a>
                         <div class="sb-sidenav-menu-heading">Hệ thống</div>
-                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#userPages" aria-expanded="false" aria-controls="userPages">
                             <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                             Người dùng
                             <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                         </a>
-                        <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                        <div class="collapse" id="userPages" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link" asp-controller="User" asp-action="Index">Danh sách</a>
@@ -37,33 +38,30 @@
                                 </nav>
                             </nav>
                         </div>
-                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#productPages" aria-expanded="false" aria-controls="productPages">
                             <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
                             Sản phẩm
                             <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                         </a>
-                        <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
-                            <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
-                                    Sản phẩm
-                                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                </a>
-                                <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
-                                    <nav class="sb-sidenav-menu-nested nav">
-                                        <a class="nav-link" asp-controller="Product" asp-action="Index">Danh sách</a>
-                                        <a class="nav-link" asp-controller="Product" asp-action="Create">Tạo mới</a>
-                                    </nav>
-                                </div>
-                                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
-                                    Danh Mục
-                                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                </a>
-                                <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
-                                    <nav class="sb-sidenav-menu-nested nav">
-                                        <a class="nav-link" asp-controller="Category" asp-action="Index">Danh sách</a>
-                                        <a class="nav-link" asp-controller="Category" asp-action="Create">Tạo mới</a>
-                                    </nav>
-                                </div>
+                        <div class="collapse" id="productPages" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" asp-controller="Product" asp-action="Index">Danh sách</a>
+                                    <a class="nav-link" asp-controller="Product" asp-action="Create">Thêm mới</a>
+                                </nav>
+                            </nav>
+                        </div>
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#categoryPages" aria-expanded="false" aria-controls="categoryPages">
+                            <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                            Danh mục
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <div class="collapse" id="categoryPages" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" asp-controller="Category" asp-action="Index">Danh sách</a>
+                                    <a class="nav-link" asp-controller="Category" asp-action="Create">Thêm mới</a>
+                                </nav>
                             </nav>
                         </div>
                         <div class="sb-sidenav-menu-heading">Addons</div>

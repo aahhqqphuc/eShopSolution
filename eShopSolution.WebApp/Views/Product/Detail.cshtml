@@ -7,6 +7,8 @@
 @inject Microsoft.Extensions.Configuration.IConfiguration Configuration;
 @inject LazZiya.ExpressLocalization.ISharedCultureLocalizer _loc;
 
+@Model.Product.ViewCount += 1;
+
 <ul class="breadcrumb">
     <li><a href="/"><localize>Home</localize></a> <span class="divider">/</span></li>
     <li class="active">@Model.Product.Name</li>
@@ -55,7 +57,7 @@
             <div class="control-group">
                 <label class="control-label"><span>$222.00</span></label>
                 <div class="controls">
-                    <input type="number" class="span1" placeholder="Qty." />
+                    <input type="number" class="span1" placeholder="0" />
                     <button type="submit" class="btn btn-large btn-primary pull-right"> <localize>Add to</localize> <i class=" icon-shopping-cart"></i></button>
                 </div>
             </div>

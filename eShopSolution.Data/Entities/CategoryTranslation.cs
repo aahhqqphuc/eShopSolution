@@ -8,8 +8,6 @@
 
         public string Name { get; set; }
 
-        public string SeoDescription { get; set; }
-
         public string SeoTitle { get; set; }
 
         public string LanguageId { get; set; }

@@ -24,7 +24,7 @@
 <div class="container-fluid">
     <h1 class="mt-4">Tạo mới sản phẩm</h1>
     <ol class="breadcrumb mb-4">
-        <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
+        <li class="breadcrumb-item"><a href="/Product">Sản phẩm</a></li>
         <li class="breadcrumb-item active">Tạo mới sản phẩm</li>
     </ol>
     <div class="card mb-4">
@@ -66,11 +66,6 @@
                         <label asp-for="Details" class="control-label"></label>
                         <textarea id="txt_details" asp-for="Details" rows="35" class="form-control"></textarea>
                         <span asp-validation-for="Details" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="SeoDescription" class="control-label"></label>
-                        <input asp-for="SeoDescription" class="form-control" />
-                        <span asp-validation-for="SeoDescription" class="text-danger"></span>
                     </div>
                     <div class="form-group">
                         <label asp-for="SeoTitle" class="control-label"></label>

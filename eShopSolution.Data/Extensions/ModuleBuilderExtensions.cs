@@ -45,7 +45,6 @@ namespace eShopSolution.Data.Extensions
                     Name = "Áo nam",
                     LanguageId = "vi",
                     SeoAlias = "ao-nam",
-                    SeoDescription = "Sản phẩm áo thời trang nam",
                     SeoTitle = "Sản phẩm áo thời trang nam"
                 },
                 new CategoryTranslation()
@@ -55,7 +54,6 @@ namespace eShopSolution.Data.Extensions
                     Name = "Men shirt",
                     LanguageId = "en",
                     SeoAlias = "men-shirt",
-                    SeoDescription = "Men's fashion shirt products",
                     SeoTitle = "Men's fashion shirt products"
                 });
 
@@ -67,7 +65,6 @@ namespace eShopSolution.Data.Extensions
                     Name = "Áo nữ",
                     LanguageId = "vi",
                     SeoAlias = "ao-nu",
-                    SeoDescription = "Sản phẩm áo thời trang nữ",
                     SeoTitle = "Sản phẩm áo thời trang nữ"
                 },
                 new CategoryTranslation()
@@ -77,7 +74,6 @@ namespace eShopSolution.Data.Extensions
                     Name = "Women shirt",
                     LanguageId = "en",
                     SeoAlias = "women-shirt",
-                    SeoDescription = "Women's fashion shirt products",
                     SeoTitle = "Womens's fashion shirt products"
                 });
 
@@ -100,7 +96,6 @@ namespace eShopSolution.Data.Extensions
                    Name = "Áo sơ mi trắng nam",
                    LanguageId = "vi",
                    SeoAlias = "ao-so-mi-trang-nam",
-                   SeoDescription = "Áo sơ mi trắng nam",
                    SeoTitle = "Áo sơ mi trắng nam",
                    Details = "Áo sơ mi trắng nam",
                    Description = ""
@@ -112,7 +107,6 @@ namespace eShopSolution.Data.Extensions
                    Name = "Mens white shirt",
                    LanguageId = "en",
                    SeoAlias = "mens-white-shirt",
-                   SeoDescription = "Mens white shirt",
                    SeoTitle = "Mens white shirt",
                    Details = "Mens white shirt",
                    Description = ""

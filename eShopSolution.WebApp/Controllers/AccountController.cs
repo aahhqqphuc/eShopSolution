@@ -72,7 +72,7 @@ namespace eShopSolution.WebApp.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Register()
+        public IActionResult Register()
         {
             return View();
         }
@@ -93,33 +93,6 @@ namespace eShopSolution.WebApp.Controllers
             ModelState.AddModelError("", result.Message);
 
             return View(request);
-
-            //if (!result.IsSuccessed)
-            //{
-            //    ModelState.AddModelError("", result.Message);
-
-            //    return View();
-            //}
-            //var loginResult = await _userApiClient.Authenticate(new LoginRequest()
-            //{
-            //    UserName = request.UserName,
-            //    Password = request.Password,
-            //    RememberMe = true
-            //});
-
-            //var userPrincipal = this.ValidateToken(loginResult.ResultObj);
-
-            //var authProperties = new AuthenticationProperties
-            //{
-            //    ExpiresUtc = DateTimeOffset.UtcNow.AddMinutes(10),
-            //    IsPersistent = false
-            //};
-
-            //HttpContext.Session.SetString(SystemConstants.AppSettings.Token, loginResult.ResultObj);
-
-            //await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, userPrincipal, authProperties);
-
-            //return RedirectToAction("Home", "Login");
         }
 
         private ClaimsPrincipal ValidateToken(string jwtToken)

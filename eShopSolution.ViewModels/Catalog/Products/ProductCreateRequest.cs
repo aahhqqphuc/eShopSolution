@@ -9,13 +9,15 @@ namespace eShopSolution.ViewModels.Catalog.Products
         [Display(Name = "Tên sản phẩm")]
         public string Name { get; set; }
 
-        [Display(Name = "Giá")]
+        [Required(ErrorMessage = "Bạn phải nhập giá bán")]
+        [Display(Name = "Giá bán")]
         public decimal Price { get; set; }
 
+        [Required(ErrorMessage = "Bạn phải nhập giá gốc")]
         [Display(Name = "Giá gốc")]
         public decimal OriginalPrice { set; get; }
 
-        [Display(Name = "Số lượng tồn kho")]
+        [Display(Name = "Số lượng trong kho")]
         public int Stock { set; get; }
 
         [Display(Name = "Mô tả sản phẩm")]
@@ -24,21 +26,15 @@ namespace eShopSolution.ViewModels.Catalog.Products
         [Display(Name = "Thông tin chi tiết sản phẩm")]
         public string Details { set; get; }
 
-        [Display(Name = "Mô tả SEO")]
-        public string SeoDescription { set; get; }
-
         [Display(Name = "Tiêu đề SEO")]
         public string SeoTitle { set; get; }
 
-        [Display(Name = "Bí danh SEO")]
+        [Display(Name = "Tag SEO")]
         public string SeoAlias { get; set; }
 
         public string LanguageId { set; get; }
 
         [Display(Name = "Ảnh sản phẩm")]
         public IFormFile ThumbnailImage { get; set; }
-
-        [Display(Name = "Nổi bật")]
-        public bool? IsFeatured { get; set; }
     }
 }
